@@ -1,0 +1,28 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+  port: 8000
+  servlet:
+    register-default-servlet: on
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/db
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+jwt:
+  secret: mak*(!NSKJ@(*21
+  expiresIn: 86400000
+
